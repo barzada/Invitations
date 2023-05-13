@@ -148,47 +148,7 @@ private EditText titleEditText;
         }
     }
 
-    private void addEventToCalendar2() {
-        // Read the event details from the local JSON file
 
-
-            try {
-
-                String title = titleEditText.getText().toString();
-                String description = descriptionEditText.getText().toString();
-                String location = locationEditText.getText().toString();
-                String startDateTimeStr = startDatetimeEditText.getText().toString();
-                String endDateTimeStr =endDatetimeEditText.getText().toString();
-
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
-                Date startDateTime = format.parse(startDateTimeStr);
-                Date endDateTime = format.parse(endDateTimeStr);
-
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(startDateTime);
-
-                ContentResolver cr = getContentResolver();
-                ContentValues values = new ContentValues();
-                values.put(CalendarContract.Events.TITLE, title);
-                values.put(CalendarContract.Events.DESCRIPTION, description);
-                values.put(CalendarContract.Events.EVENT_LOCATION, location);
-                values.put(CalendarContract.Events.DTSTART, calendar.getTimeInMillis());
-                values.put(CalendarContract.Events.DTEND, endDateTime.getTime());
-                values.put(CalendarContract.Events.CALENDAR_ID, 1);
-                values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());
-
-            // Insert the event
-            if (checkSelfPermission(Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
-                cr.insert(CalendarContract.Events.CONTENT_URI, values);
-                Toast.makeText(this, "Event added to calendar", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Calendar permission denied", Toast.LENGTH_SHORT).show();
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Error parsing date", Toast.LENGTH_SHORT).show();
-        }
-    }
     private void addEventToCalendar() {
 
 
