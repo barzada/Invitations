@@ -28,7 +28,14 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
-    </application>
+        <activity
+            android:name=".FinishPage"
+            android:label="FinishPage"
+   />
+
+
+</application>
 
 </manifest>

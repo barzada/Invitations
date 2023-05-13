@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -181,7 +182,10 @@ private EditText titleEditText;
                 if (endDateTime.getTime() > startDateTime.getTime()) {
                     {
                         cr.insert(CalendarContract.Events.CONTENT_URI, values);
-                        Toast.makeText(this, "Event added to calendar", Toast.LENGTH_SHORT).show();
+                        // Open new activity with the title "Event added to calendar"
+                        Intent intent = new Intent(this, FinishPage.class);
+                        intent.putExtra("title", "Event added to calendar");
+                        startActivity(intent);
                     }
                 } else {
                     Toast.makeText(this, "end date time can't be before start date time", Toast.LENGTH_SHORT).show();
