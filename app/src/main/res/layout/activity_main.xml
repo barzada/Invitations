@@ -11,6 +11,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,19 +50,34 @@
 
 
     </com.google.android.material.textfield.TextInputLayout> <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/datetimeTextView"
+    android:id="@+id/startdatetimeTextView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="32dp"
     android:layout_marginEnd="32dp"
-    android:hint="date time"
+    android:hint="start date time"
     android:layout_weight="1"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="date time"
+        android:hint="start date time"
+        />
+</com.google.android.material.textfield.TextInputLayout> <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/enddatetimeTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:hint="end date time"
+    android:layout_weight="1"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="end date time"
         />
 
 
